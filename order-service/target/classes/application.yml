@@ -1,0 +1,25 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: ORDER-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/orderdb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL57InnoDBDialect
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
